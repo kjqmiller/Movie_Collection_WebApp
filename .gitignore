@@ -1,0 +1,9 @@
+config.py
+notes.txt
+search_scratch.py
+demo_json.txt
+pyvenv.cfg
+bin/
+env/
+lib/
+include/

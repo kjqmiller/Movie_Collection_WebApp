@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- url_for() is Flask function to generate a url path for a file, in this case for main.css
+     is the same as putting static/css/main.css but url_for makes paths absolute and handles
+     things such as escape characters-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+  <div class="nav">
+    <a href="/collection">Collection</a>
+    <a href="/">Home</a>
+  </div>
+  <br>
+    {% block body %} {% endblock %}
+  </body>
+</html>

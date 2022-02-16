@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>MovieCollection</title>
+{% endblock %}
+
+{% block body %}
+
+<h1 align="center">My Collection!</h1>
+
+<!-- Display each title as the poster, linking each poster to the imdb page for that title -->
+<div class="title_grid">
+    {% for title in titles %}
+    {% set url = 'https://www.imdb.com' ~ title['id']%}
+        <a class="title_image" target="_blank" rel="noopener noreferrer" href = {{url}}>
+            <form action="/delete" method="POST">
+                <button type="submit" name="delete" class="delete_button" value="{{ title['id'] }}">Delete</button>
+                <img src="{{title['image']['url']}}">
+            </form>
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

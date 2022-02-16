@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <!-- SEARCH QUERY SECTION -->
+    <form action="/results" method="POST">
+        <!--   name attribute is what gets passed on submission to app.py     -->
+        <input type="text" placeholder="Enter a film or TV series" name="search_query" id="content">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if empty == True %}
+    <h4>Search cannot be blank, please enter a title to search for!</h4>
+    {% endif %}
+
+    {% if success == 0 %}
+    <h4>Added!</h4>
+    {% endif %}
+
+    {% if success == 1 %}
+    <h4>Something went wrong, try checking that current IP is allowed by MongoDB</h4>
+    {% endif %}
+
+    {% if success == 2 %}
+    <h4>ValueError, bad data</h4>
+    {% endif %}
+
+    {% if deleted == True %}
+    <h4>Item deleted!</h4>
+    {% endif %}
+
+    {% if deleted == False %}
+    <h4>Something went wrong while trying to delete</h4>
+    {% endif %}
+
+</div>
+<h1 style="text-align: center">Home Page</h1>
+
+{% endblock %}

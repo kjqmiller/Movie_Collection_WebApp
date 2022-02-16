@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Selected Movie</title>
+{% endblock %}
+
+{% block body %}
+
+{% for title in checked_ids %}
+<img class='selected' src="{{ title['image']['url'] }}">
+{% endfor %}
+
+{% endblock %}

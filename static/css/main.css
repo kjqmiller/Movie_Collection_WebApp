@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.nav {
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+}
+
+table, table td, table th {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+img{
+    max-width:337px;
+    max-height:500px;
+}
+
+input[type="checkbox"] {
+	display:none;
+}
+
+.title_image {
+    display: inline-block;
+}
+
+.delete_button {
+    position: absolute;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.submit_button {
+    background-color:green;
+}
+
+img {
+    padding: 5px;
+    margin-bottom: 25px;
+
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.checkbox_label {
+    display: inline-block;
+}
+
+.custom_checkbox:checked + label > .selected {
+    box-shadow: 0 0 6px 6px #00008B;
+}

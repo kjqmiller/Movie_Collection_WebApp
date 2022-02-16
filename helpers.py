@@ -1,6 +1,5 @@
 import certifi
 import requests
-from pprint import pprint
 from config import *
 from pymongo import MongoClient
 
@@ -34,7 +33,6 @@ def query_imdb(search_query):
     titles = []
     for item in json_data['results']:
         if 'titleType' in item:
-            print(item)
             titles.append(item)
 
     return titles

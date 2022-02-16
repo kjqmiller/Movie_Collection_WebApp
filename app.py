@@ -1,7 +1,6 @@
 import json
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, request
 from helpers import query_imdb, save_to_db, get_all_titles, delete_from_db
-import pymongo
 from pprint import pprint
 
 app = Flask(__name__)

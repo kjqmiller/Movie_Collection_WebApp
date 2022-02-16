@@ -1,7 +1,6 @@
 import json
 from flask import Flask, render_template, request
 from helpers import query_imdb, save_to_db, get_all_titles, delete_from_db
-from pprint import pprint
 
 app = Flask(__name__)
 
@@ -49,7 +48,6 @@ def submit():
         selected_ids = request.form.getlist('checked_title')
         # Python string uses single quote ' whereas json uses double ", had to replace to make json.loads() work
         for item in selected_ids:
-            pprint(item)
             item = item.replace('\'', '\"')
             try:
                 title = json.loads(item)
@@ -71,7 +69,6 @@ def delete():
         if request.method == 'POST':
             title_to_delete = request.form.get('delete')
             title_to_delete = title_to_delete.replace('\'', '\"')
-            pprint(title_to_delete)
             delete_from_db(title_to_delete)
         return render_template('index.html', deleted=True)
     except Exception:
